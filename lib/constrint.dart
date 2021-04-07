@@ -57,8 +57,8 @@ class AppTheme {
       textStyle: TextStyle(fontSize: 18, color: LightColor.black));
   static TextStyle h5Style = GoogleFonts.lato(
       textStyle: TextStyle(fontSize: 16, color: LightColor.black));
-  static TextStyle h6Style =
-      GoogleFonts.lato(textStyle: TextStyle(fontSize: 14, color: Colors.red));
+  static TextStyle h6Style = GoogleFonts.lato(
+      textStyle: TextStyle(fontSize: 14, color: LightColor.black));
 }
 
 final kDefaultShadow = BoxShadow(

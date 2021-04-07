@@ -1,3 +1,4 @@
+import 'package:flex/screens/get-started/get-started.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
                   Theme.of(context).textTheme,
                 ),
               ),
-              home: ButtonNaviagtion(),
+              home: GetStarted(), //ButtonNaviagtion(),
               routes: {},
             );
           },
