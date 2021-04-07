@@ -48,28 +48,28 @@ class AppTheme {
       textStyle: TextStyle(color: LightColor.subTitleTextColor, fontSize: 12));
 
   static TextStyle h1Style = GoogleFonts.lato(
-      textStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.bold));
+      textStyle: TextStyle(fontSize: 18.5.sp, fontWeight: FontWeight.bold));
   static TextStyle h2Style = GoogleFonts.lato(
-      textStyle: TextStyle(fontSize: 22, color: LightColor.black));
+      textStyle: TextStyle(fontSize: 17.0.sp, color: LightColor.black));
   static TextStyle h3Style = GoogleFonts.lato(
-      textStyle: TextStyle(fontSize: 20, color: LightColor.black));
+      textStyle: TextStyle(fontSize: 15.5.sp, color: LightColor.black));
   static TextStyle h4Style = GoogleFonts.lato(
-      textStyle: TextStyle(fontSize: 18, color: LightColor.black));
+      textStyle: TextStyle(fontSize: 15.0.sp, color: LightColor.black));
   static TextStyle h5Style = GoogleFonts.lato(
-      textStyle: TextStyle(fontSize: 16, color: LightColor.black));
+      textStyle: TextStyle(fontSize: 13.0.sp, color: LightColor.black));
   static TextStyle h6Style = GoogleFonts.lato(
-      textStyle: TextStyle(fontSize: 14, color: LightColor.black));
+      textStyle: TextStyle(fontSize: 11.0.sp, color: LightColor.black));
 }
 
 final kDefaultShadow = BoxShadow(
   offset: Offset(0, 50),
-  blurRadius: 50,
+  blurRadius: kDefaultPadding * 5,
   color: lightcolorsCode3.withOpacity(0.15),
 );
 
 final kDefaultCardShadow = BoxShadow(
   offset: Offset(0, 20),
-  blurRadius: 50,
+  blurRadius: kDefaultPadding * 5,
   color: Colors.black.withOpacity(0.1),
 );
 

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import '../../../constrint.dart';
@@ -19,6 +20,7 @@ class IconBar extends StatelessWidget {
           {}
         },
         style: TextButton.styleFrom(
+            elevation: 5,
             backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(kDefaultPadding))),
@@ -26,12 +28,12 @@ class IconBar extends StatelessWidget {
           children: <Widget>[
             Image.asset(
               iconAssets,
-              height: 60,
-              width: 60,
+              height: 9.0.h,
+              width: 15.0.w,
               //color: Colors.white,
             ),
             SizedBox(
-              width: 10,
+              width: kDefaultPadding,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,11 +43,15 @@ class IconBar extends StatelessWidget {
                   style: AppTheme.h2Style.copyWith(fontSize: 18.0.sp),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: kDefaultPadding * 0.5,
                 ),
-                Text(
-                  text2,
-                  style: AppTheme.h6Style,
+                Container(
+                  width: 66.0.w,
+                  child: AutoSizeText(
+                    text2,
+                    maxLines: 3,
+                    style: AppTheme.h6Style,
+                  ),
                 )
               ],
             )
