@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import '././screens/homepage/homepage.dart';
 import 'constrint.dart';
+import 'screens/button-navigation/button-naviagtion.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
                   Theme.of(context).textTheme,
                 ),
               ),
-              home: HomePage(),
+              home: ButtonNaviagtion(),
               routes: {},
             );
           },

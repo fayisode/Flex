@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  curved_navigation_bar: ^0.3.7
   google_fonts: ^2.0.0
   provider: ^5.0.0
   sizer: ^1.1.8
