@@ -21,12 +21,44 @@ class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
     HomePage(),
     StashScreen()
   ];
-  final List<Icon> _icon = [
-    Icon(Icons.verified_user, size: 20, color: Colors.white),
-    Icon(Icons.add, size: 20, color: Colors.white),
-    Icon(Icons.radio, size: 20, color: Colors.white),
-    Icon(Icons.list, size: 20, color: Colors.white),
-    Icon(Icons.compare_arrows, size: 20, color: Colors.white),
+  final List<Widget> _icon = [
+    //Icon(Icons.verified_user, size: 20, color: Colors.white),
+    //
+    Image.asset(
+      "assets/images/stash.png",
+      height: 30,
+      width: 30,
+      //color: Colors.white,
+    ),
+    Image.asset(
+      "assets/images/event.png",
+      height: 30,
+      width: 30,
+      //color: Colors.white,
+    ),
+    Image.asset(
+      "assets/images/flex_image.png",
+      height: 30,
+      width: 30,
+      //color: Colors.white,
+    ),
+
+    Image.asset(
+      "assets/images/tour.png",
+      height: 30,
+      width: 30,
+      //color: Colors.white,
+    ),
+    Image.asset(
+      "assets/images/profile.png",
+      height: 30,
+      width: 30,
+      //color: Colors.white,
+    ),
+    // Icon(Icons.add, size: 20, color: Colors.white),
+    // Icon(Icons.radio, size: 20, color: Colors.white),
+    // Icon(Icons.list, size: 20, color: Colors.white),
+    // Icon(Icons.compare_arrows, size: 20, color: Colors.white),
   ];
   @override
   void initState() {
