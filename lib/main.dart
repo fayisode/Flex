@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import '././screens/homepage/homepage.dart';
 import 'constrint.dart';
-import 'screens/button-navigation/button-naviagtion.dart';
+import 'screens/events/event-screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
                   Theme.of(context).textTheme,
                 ),
               ),
-              home: GetStarted(), //ButtonNaviagtion(),
+              home: EventScreen(), //ButtonNaviagtion(),
               routes: {},
             );
           },

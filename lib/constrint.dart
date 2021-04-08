@@ -64,7 +64,7 @@ class AppTheme {
 final kDefaultShadow = BoxShadow(
   offset: Offset(0, 50),
   blurRadius: kDefaultPadding * 5,
-  color: lightcolorsCode3.withOpacity(0.15),
+  color: Colors.white.withOpacity(0.15),
 );
 
 final kDefaultCardShadow = BoxShadow(
