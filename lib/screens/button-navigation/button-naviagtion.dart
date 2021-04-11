@@ -1,8 +1,10 @@
 import 'dart:math';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flex/constrint.dart';
+import 'package:flex/screens/events/event-screen.dart';
 import 'package:flex/screens/homepage/homepage.dart';
 import 'package:flex/screens/stash/stash-screen.dart';
+import 'package:flex/screens/trips/trip_screen.dart';
 import 'package:flutter/material.dart';
 
 class ButtonNaviagtion extends StatefulWidget {
@@ -16,49 +18,49 @@ class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
   int _selectedPageIndex = 2;
   final List<Widget> _pages = [
     HomePage(),
-    HomePage(),
+    EventScreen(),
     StashScreen(),
-    HomePage(),
+    TripScreen(),
     StashScreen()
   ];
   final List<Widget> _icon = [
-    //Icon(Icons.verified_user, size: 20, color: Colors.white),
+    Icon(Icons.stacked_bar_chart, size: 30, color: Colors.white),
     //
-    Image.asset(
-      "assets/images/stash.png",
-      height: 30,
-      width: 30,
-      //color: Colors.white,
-    ),
-    Image.asset(
-      "assets/images/event.png",
-      height: 30,
-      width: 30,
-      //color: Colors.white,
-    ),
-    Image.asset(
-      "assets/images/flex_image.png",
-      height: 30,
-      width: 30,
-      //color: Colors.white,
-    ),
+    // Image.asset(
+    //   "assets/images/stash.png",
+    //   height: 30,
+    //   width: 30,
+    //   color: Colors.white,
+    // ),
+    // Image.asset(
+    //   "assets/images/event.png",
+    //   height: 30,
+    //   width: 30,
+    //   //color: Colors.white,
+    // ),
+    // Image.asset(
+    //   "assets/images/flex_image.png",
+    //   height: 30,
+    //   width: 30,
+    //   //color: Colors.white,
+    // ),
 
-    Image.asset(
-      "assets/images/tour.png",
-      height: 30,
-      width: 30,
-      //color: Colors.white,
-    ),
-    Image.asset(
-      "assets/images/profile.png",
-      height: 30,
-      width: 30,
-      //color: Colors.white,
-    ),
-    // Icon(Icons.add, size: 20, color: Colors.white),
-    // Icon(Icons.radio, size: 20, color: Colors.white),
-    // Icon(Icons.list, size: 20, color: Colors.white),
-    // Icon(Icons.compare_arrows, size: 20, color: Colors.white),
+    // Image.asset(
+    //   "assets/images/tour.png",
+    //   height: 30,
+    //   width: 30,
+    //   //color: Colors.white,
+    // ),
+    // Image.asset(
+    //   "assets/images/profile.png",
+    //   height: 30,
+    //   width: 30,
+    //   //color: Colors.white,
+    // ),
+    Icon(Icons.add, size: 20, color: Colors.white),
+    Icon(Icons.radio, size: 20, color: Colors.white),
+    Icon(Icons.list, size: 20, color: Colors.white),
+    Icon(Icons.compare_arrows, size: 20, color: Colors.white),
   ];
   @override
   void initState() {
@@ -109,7 +111,7 @@ class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
               itemCount: _pages.length,
               itemBuilder: (context, position) {
                 final page = Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 0.1),
                   child: _pages[position],
                 );
 

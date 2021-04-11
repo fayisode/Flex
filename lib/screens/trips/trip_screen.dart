@@ -1,15 +1,15 @@
-import 'package:flex/constrint.dart';
-
+import 'package:flex/screens/events/components/detail_sliver_delegate.dart';
+import 'package:flex/screens/events/components/hotel_bart.dart';
 import 'package:flutter/material.dart';
-import 'components/detail_sliver_delegate.dart';
-import 'components/hotel_bart.dart';
 
-class EventScreen extends StatefulWidget {
+import '../../constrint.dart';
+
+class TripScreen extends StatefulWidget {
   @override
-  _EventScreenState createState() => _EventScreenState();
+  _TripScreenState createState() => _TripScreenState();
 }
 
-class _EventScreenState extends State<EventScreen> {
+class _TripScreenState extends State<TripScreen> {
   final double expandedHeight = 300;
   final double roundedHeight = 50;
   @override
@@ -30,8 +30,8 @@ class _EventScreenState extends State<EventScreen> {
     return SliverPersistentHeader(
         delegate: DetailSliverDelegate(
             expandedHeight,
-            "https://images.pexels.com/photos/2311713/pexels-photo-2311713.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             roundedHeight,
-            "Events"));
+            "Trips"));
   }
 }
