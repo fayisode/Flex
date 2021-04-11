@@ -63,6 +63,6 @@ class EventTripListData {
         amount: 5321,
         stops: "Klein Shoals",
         titleTxt: "Wiegand Green",
-        location: "Guadeloupe")
+        location: "Guadeloupe"),
   ];
 }

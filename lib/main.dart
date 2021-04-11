@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
                   Theme.of(context).textTheme,
                 ),
               ),
-              home: EventScreen(), //ButtonNaviagtion(),
+              home:
+                  EventScreen(), //GetStarted(), //EventScreen(), //ButtonNaviagtion(),
               routes: {},
             );
           },

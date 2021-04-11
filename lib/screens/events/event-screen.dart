@@ -1,7 +1,8 @@
 import 'package:flex/constrint.dart';
-import 'package:flex/screens/events/components/event_trip_list.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'components/detail_sliver_delegate.dart';
+import 'components/hotel_bart.dart';
 
 class EventScreen extends StatefulWidget {
   @override
@@ -9,6 +10,8 @@ class EventScreen extends StatefulWidget {
 }
 
 class _EventScreenState extends State<EventScreen> {
+  final double expandedHeight = 400;
+  final double roundedHeight = 50;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,40 +19,19 @@ class _EventScreenState extends State<EventScreen> {
       body: SafeArea(
           child: CustomScrollView(
         slivers: <Widget>[
-          SliverList(delegate: SliverChildBuilderDelegate((context, index) {
-            return Container(
-              margin: EdgeInsets.all(kDefaultPadding),
-              height: 350,
-              width: double.infinity,
-              child: Stack(
-                alignment: Alignment.topCenter,
-                //fit: StackFit.expand,
-                children: [
-                  Positioned(
-                      bottom: 10,
-                      child: Container(
-                          height: 150,
-                          width: 350,
-                          decoration: BoxDecoration(
-                              boxShadow: [kDefaultShadow],
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15)))),
-                  Container(
-                    height: 250,
-                    width: 330,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image.network(
-                          EventTripListData.hotelList[index].images[0],
-                          fit: BoxFit.cover,
-                        )),
-                  ),
-                ],
-              ),
-            );
-          }))
+          _buildSliverHead(),
+          HotelBar(),
         ],
       )),
     );
+  }
+
+  Widget _buildSliverHead() {
+    return SliverPersistentHeader(
+        delegate: DetailSliverDelegate(
+            expandedHeight,
+            //"https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://images.pexels.com/photos/3560168/pexels-photo-3560168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            roundedHeight));
   }
 }
