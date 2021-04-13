@@ -4,7 +4,7 @@ import 'package:flex/constrint.dart';
 import 'package:flex/screens/events/event-screen.dart';
 import 'package:flex/screens/homepage/homepage.dart';
 import 'package:flex/screens/stash/stash-screen.dart';
-import 'package:flex/screens/trips/trip_screen.dart';
+// import 'package:flex/screens/trips/trip_screen.dart';
 import 'package:flutter/material.dart';
 
 class ButtonNaviagtion extends StatefulWidget {
@@ -20,7 +20,8 @@ class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
     HomePage(),
     EventScreen(),
     StashScreen(),
-    TripScreen(),
+    // TripScreen(),
+    StashScreen(),
     StashScreen()
   ];
   final List<Widget> _icon = [

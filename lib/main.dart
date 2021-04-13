@@ -1,11 +1,12 @@
 import 'package:flex/screens/get-started/get-started.dart';
-import 'package:flex/screens/trips/trip_screen.dart';
+// import 'package:flex/screens/trips/trip_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'constrint.dart';
 import 'screens/button-navigation/button-naviagtion.dart';
+import 'screens/event_detail/event_detail_screen.dart';
 import 'screens/events/event-screen.dart';
 
 void main() {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
                   Theme.of(context).textTheme,
                 ),
               ),
-              home: ButtonNaviagtion(),
+              home: EventDetailSceen(),
               routes: {},
             );
           },
