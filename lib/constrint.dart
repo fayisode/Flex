@@ -70,7 +70,7 @@ final kDefaultShadow = BoxShadow(
 final kDefaultCardShadow = BoxShadow(
   offset: Offset(0, 20),
   blurRadius: kDefaultPadding * 5,
-  color: Colors.black.withOpacity(0.1),
+  color: Colors.black.withOpacity(0.15),
 );
 
 // TextField dedign

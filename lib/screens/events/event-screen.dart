@@ -19,9 +19,9 @@ class EventScreen extends StatefulWidget {
 }
 
 class _EventScreenState extends State<EventScreen> {
-  @override
   PageController _controller;
   var currentPageValue = 0.0;
+  @override
   void initState() {
     super.initState();
     _controller = PageController(initialPage: 0);
@@ -106,8 +106,14 @@ class _EventScreenState extends State<EventScreen> {
                   position: position,
                 ),
                 TextBar(position: position),
-                forwardArrow(position),
-                backArrow(position)
+                Row(
+                  //crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    backArrow(position),
+                    forwardArrow(position),
+                  ],
+                )
               ],
             );
 
@@ -138,47 +144,39 @@ class _EventScreenState extends State<EventScreen> {
     );
   }
 
-  Positioned backArrow(int position) {
-    return Positioned(
-        //bottom: 0,
-        top: 18.3.h,
-        left: 5,
-        child: position >= 1
-            ? CircleAvatar(
-                backgroundColor: Colors.white,
-                child: IconButton(
-                  onPressed: () {
-                    backArrowTapped(position);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                    size: 20,
-                  ),
-                ),
-              )
-            : Text(""));
+  Widget backArrow(int position) {
+    return position >= 1
+        ? CircleAvatar(
+            backgroundColor: Colors.white,
+            child: IconButton(
+              onPressed: () {
+                backArrowTapped(position);
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+                size: 20,
+              ),
+            ),
+          )
+        : Text("");
   }
 
-  Positioned forwardArrow(int position) {
-    return Positioned(
-        //bottom: 0,
-        top: 18.3.h,
-        right: 5,
-        child: position != EventTripListData.hotelList.length - 1
-            ? CircleAvatar(
-                backgroundColor: Colors.white,
-                child: IconButton(
-                  onPressed: () {
-                    forwardArrowTapped(position);
-                  },
-                  icon: Icon(
-                    Icons.arrow_forward,
-                    color: Colors.black,
-                    size: 20,
-                  ),
-                ),
-              )
-            : Text(""));
+  Widget forwardArrow(int position) {
+    return position != EventTripListData.hotelList.length - 1
+        ? CircleAvatar(
+            backgroundColor: Colors.white,
+            child: IconButton(
+              onPressed: () {
+                forwardArrowTapped(position);
+              },
+              icon: Icon(
+                Icons.arrow_forward,
+                color: Colors.black,
+                size: 20,
+              ),
+            ),
+          )
+        : Text("");
   }
 }

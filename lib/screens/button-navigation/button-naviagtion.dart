@@ -2,8 +2,10 @@ import 'dart:math';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flex/constrint.dart';
 import 'package:flex/screens/events/event-screen.dart';
+import 'package:flex/screens/flex/flex_screen.dart';
 import 'package:flex/screens/homepage/homepage.dart';
 import 'package:flex/screens/stash/stash-screen.dart';
+import 'package:flex/screens/transactions/transaction_screen.dart';
 // import 'package:flex/screens/trips/trip_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,12 +19,11 @@ class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
   var currentPageValue = 0.0;
   int _selectedPageIndex = 2;
   final List<Widget> _pages = [
-    HomePage(),
+    StashScreen(),
     EventScreen(),
-    StashScreen(),
-    // TripScreen(),
-    StashScreen(),
-    StashScreen()
+    FlexScreen(),
+    EventScreen(),
+    TransactionScreen()
   ];
   final List<Widget> _icon = [
     Icon(Icons.stacked_bar_chart, size: 30, color: Colors.white),

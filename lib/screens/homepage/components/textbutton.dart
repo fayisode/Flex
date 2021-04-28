@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../constrint.dart';
 
 class TextButtonClass extends StatelessWidget {
-  const TextButtonClass({Key key, @required this.texts}) : super(key: key);
+  const TextButtonClass({Key key, @required this.texts, @required this.ontap})
+      : super(key: key);
   final String texts;
+  final Function ontap;
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: ontap,
       child: Text(
         texts,
         style: AppTheme.h3Style,
