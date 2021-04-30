@@ -11,23 +11,23 @@ class HelpContainer extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        margin: EdgeInsets.only(top: 20),
-        height: 100,
+        margin: EdgeInsets.only(top: kDefaultPadding * 2),
+        height: kDefaultPadding * 10,
         width: double.infinity,
         decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [kDefaultCardShadow],
-            borderRadius: BorderRadius.circular(20)),
+            borderRadius: BorderRadius.circular(kDefaultPadding * 2)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
               Icons.headset,
-              size: 40,
+              size: kDefaultPadding * 4,
               color: LightColor.backgroundColor,
             ),
             SizedBox(
-              width: 10,
+              width: kDefaultPadding,
             ),
             Text(
               "Feel Free to ask, We are Ready",

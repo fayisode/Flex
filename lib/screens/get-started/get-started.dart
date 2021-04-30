@@ -3,6 +3,7 @@ import 'components/backgroung_image.dart';
 import 'components/bar-element.dart';
 
 class GetStarted extends StatelessWidget {
+  static const routeName = "/get-started";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

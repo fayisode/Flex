@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:sizer/sizer.dart';
 import '../../../constrint.dart';
 
 class ProfileTopBar extends StatelessWidget {
@@ -10,19 +10,19 @@ class ProfileTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 14.0.h,
       width: double.infinity,
       child: Row(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(right: 10),
-            height: 50,
-            width: 50,
+            margin: EdgeInsets.only(right: kDefaultPadding),
+            height: 6.7.h,
+            width: 12.5.w,
             decoration: BoxDecoration(
                 boxShadow: [kDefaultCardShadow],
-                borderRadius: BorderRadius.circular(10)),
+                borderRadius: BorderRadius.circular(kDefaultPadding)),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(kDefaultPadding),
               child: Image.asset(
                 "assets/images/people.png",
                 fit: BoxFit.cover,

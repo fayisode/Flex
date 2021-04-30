@@ -8,17 +8,17 @@ class IconBar extends StatelessWidget {
       {Key key,
       @required this.text1,
       @required this.text2,
+      @required this.onpressed,
       @required this.iconAssets})
       : super(key: key);
   final text1;
   final text2;
   final iconAssets;
+  final Function onpressed;
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: () {
-          {}
-        },
+        onPressed: onpressed,
         style: TextButton.styleFrom(
             elevation: 5,
             backgroundColor: Colors.white,

@@ -1,6 +1,6 @@
 import 'package:flex/screens/personal_data/components/date_birth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:sizer/sizer.dart';
 import '../../../constrint.dart';
 
 class TopUp extends StatelessWidget {
@@ -11,7 +11,10 @@ class TopUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+      padding: EdgeInsets.only(
+          left: kDefaultWidthPadding * 5,
+          right: kDefaultPadding,
+          top: kDefaultPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -20,31 +23,32 @@ class TopUp extends StatelessWidget {
             style: AppTheme.h5Style,
           ),
           DateBirthBar(
-            topPadding: 10,
+            topPadding: kDefaultPadding,
             text: "Amount",
           ),
           DateBirthBar(
-            topPadding: 10,
+            topPadding: kDefaultPadding,
             text: "Registration",
           ),
           DateBirthBar(
-            topPadding: 10,
+            topPadding: kDefaultPadding,
             text: "Amount",
           ),
           DateBirthBar(
-            topPadding: 10,
+            topPadding: kDefaultPadding,
             text: "Amount",
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 10),
+            padding: EdgeInsets.only(bottom: kDefaultPadding),
             child: TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(
                     backgroundColor: LightColor.backgroundColor,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20))),
+                        borderRadius:
+                            BorderRadius.circular(kDefaultPadding * 2))),
                 child: Container(
-                  height: 30,
+                  height: 4.0.h,
                   width: double.infinity,
                   child: Center(
                     child: Text(

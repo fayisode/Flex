@@ -10,7 +10,8 @@ class TransactionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 20),
+      padding:
+          EdgeInsets.only(top: kDefaultPadding, left: kDefaultWidthPadding * 2),
       child: Text(
         "Transactions",
         style: AppTheme.h2Style,

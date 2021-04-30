@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:sizer/sizer.dart';
 import '../../../constrint.dart';
 
 class ListTileBar extends StatelessWidget {
@@ -19,15 +19,15 @@ class ListTileBar extends StatelessWidget {
       onTap: onpressed,
       contentPadding: EdgeInsets.all(0),
       leading: Container(
-        height: 40,
-        width: 40,
+        height: 5.4.h,
+        width: 10.0.w,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(kDefaultPadding),
             color: Colors.white,
             boxShadow: [kDefaultCardShadow]),
         child: Icon(
           icons,
-          color: Colors.black,
+          color: LightColor.backgroundColor,
         ),
       ),
       title: Text(
@@ -37,7 +37,7 @@ class ListTileBar extends StatelessWidget {
       trailing: Icon(
         Icons.arrow_forward_ios,
         color: Colors.black,
-        size: 16,
+        size: kDefaultPadding * 1.6,
       ),
     );
   }

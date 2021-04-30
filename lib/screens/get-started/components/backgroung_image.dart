@@ -18,11 +18,11 @@ class BackGroundImage extends StatelessWidget {
       ),
       child: BackdropFilter(
         filter: ImageFilter.blur(
-          sigmaX: 0.5,
-          sigmaY: 0.5,
+          sigmaX: 0.6,
+          sigmaY: 0.6,
         ),
         child: Container(
-          color: Colors.black.withOpacity(0.2),
+          color: Colors.black.withOpacity(0.5),
         ),
       ),
     );

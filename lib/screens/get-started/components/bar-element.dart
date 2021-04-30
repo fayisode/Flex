@@ -1,3 +1,4 @@
+import 'package:flex/screens/button-navigation/button-naviagtion.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import '../../../constrint.dart';
@@ -7,6 +8,12 @@ class BarElements extends StatelessWidget {
   const BarElements({
     Key key,
   }) : super(key: key);
+  void selectCategory(BuildContext context, int index) {
+    Navigator.of(context).pushNamed(
+      ButtonNaviagtion.routeName,
+      arguments: index,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +44,7 @@ class BarElements extends StatelessWidget {
             height: kDefaultPadding * 2,
           ),
           IconBar(
+            onpressed: () => selectCategory(context, 3),
             text1: "Create a Flex Plan",
             text2:
                 "Don’t wait till later, create a plan to enjoy life responsibly. You’ve earned it!",
@@ -46,6 +54,7 @@ class BarElements extends StatelessWidget {
             height: kDefaultPadding * 2,
           ),
           IconBar(
+            onpressed: () => selectCategory(context, 1),
             text1: "Create a Stash Plan",
             text2:
                 "No time to check for time. Create a Stash Plan and top up. You worth it!",
@@ -55,6 +64,7 @@ class BarElements extends StatelessWidget {
             height: kDefaultPadding * 2,
           ),
           IconBar(
+            onpressed: () => selectCategory(context, 4),
             text1: "Find Fun Event",
             text2: "Step away for a minute or more from the hustle and bustle.",
             iconAssets: "assets/images/event.png",
@@ -63,6 +73,7 @@ class BarElements extends StatelessWidget {
             height: kDefaultPadding * 2,
           ),
           IconBar(
+            onpressed: () => selectCategory(context, 2),
             text1: "Join Flex Trips",
             text2:
                 "You deserve time away from stress and enjoy beautiful sights and landscape.",

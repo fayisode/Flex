@@ -10,11 +10,13 @@ class NameBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 15, bottom: 15),
+      margin: EdgeInsets.only(
+          top: kDefaultPadding * 1.5, bottom: kDefaultPadding * 1.5),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(kDefaultPadding * 1.2)),
       child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(kDefaultPadding * 0.8),
           child: TextFormField(
             cursorColor: Colors.black,
             keyboardType: TextInputType.text,

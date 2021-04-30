@@ -1,3 +1,4 @@
+import 'package:flex/screens/get-started/get-started.dart';
 import 'package:flex/screens/homepage/components/profile_picture.dart';
 import 'package:flex/screens/homepage/components/textbutton.dart';
 import 'package:flutter/material.dart';
@@ -9,22 +10,27 @@ class BodyColumn extends StatelessWidget {
   const BodyColumn({
     Key key,
   }) : super(key: key);
-
-  @override
   final _url = 'https://flexweb.netlify.app/';
   void _launchURL() async => await canLaunch(_url)
       ? await launch(_url)
       : throw 'Could not launch $_url';
+  void selectCategory(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      GetStarted.routeName,
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ProfilePicture(
-          radius: kDefaultWidthPadding * 10,
+          radius: kDefaultWidthPadding * 8,
         ),
         SizedBox(
-          height: 4.0.h,
+          height: 6.0.h,
         ),
         Center(
           child: Text(
@@ -44,7 +50,7 @@ class BodyColumn extends StatelessWidget {
           height: 4.0.h,
         ),
         TextButtonClass(
-          ontap: () {},
+          ontap: () => selectCategory(context),
           texts: "Get Started With Flex",
         ),
         SizedBox(

@@ -1,3 +1,4 @@
+import 'package:flex/constrint.dart';
 import 'package:flex/screens/profile/components/help_container.dart';
 import 'package:flex/screens/profile/components/profile_top_bar.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class Body extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(kDefaultPadding * 1.2),
           child: Column(
             children: <Widget>[
               ProfileTopBar(),

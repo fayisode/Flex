@@ -1,80 +1,28 @@
-import 'dart:math';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flex/constrint.dart';
-import 'package:flex/screens/events/event-screen.dart';
-import 'package:flex/screens/flex/flex_screen.dart';
-import 'package:flex/screens/homepage/homepage.dart';
-import 'package:flex/screens/stash/stash-screen.dart';
-import 'package:flex/screens/transactions/transaction_screen.dart';
-// import 'package:flex/screens/trips/trip_screen.dart';
+import 'components/icon_data.dart';
+import 'components/to_page_transformation.dart';
 import 'package:flutter/material.dart';
+import 'components/curved_navigation.dart';
+import 'components/from_page_transformation.dart';
 
 class ButtonNaviagtion extends StatefulWidget {
+  static const routeName = "/button-navigation";
   @override
   _ButtonNaviagtionState createState() => _ButtonNaviagtionState();
 }
 
 class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
   PageController _controller;
+  int initialPage;
   var currentPageValue = 0.0;
   int _selectedPageIndex = 2;
-  final List<Widget> _pages = [
-    StashScreen(),
-    EventScreen(),
-    FlexScreen(),
-    EventScreen(),
-    TransactionScreen()
-  ];
-  final List<Widget> _icon = [
-    Icon(Icons.stacked_bar_chart, size: 30, color: Colors.white),
-    //
-    // Image.asset(
-    //   "assets/images/stash.png",
-    //   height: 30,
-    //   width: 30,
-    //   color: Colors.white,
-    // ),
-    // Image.asset(
-    //   "assets/images/event.png",
-    //   height: 30,
-    //   width: 30,
-    //   //color: Colors.white,
-    // ),
-    // Image.asset(
-    //   "assets/images/flex_image.png",
-    //   height: 30,
-    //   width: 30,
-    //   //color: Colors.white,
-    // ),
 
-    // Image.asset(
-    //   "assets/images/tour.png",
-    //   height: 30,
-    //   width: 30,
-    //   //color: Colors.white,
-    // ),
-    // Image.asset(
-    //   "assets/images/profile.png",
-    //   height: 30,
-    //   width: 30,
-    //   //color: Colors.white,
-    // ),
-    Icon(Icons.add, size: 20, color: Colors.white),
-    Icon(Icons.radio, size: 20, color: Colors.white),
-    Icon(Icons.list, size: 20, color: Colors.white),
-    Icon(Icons.compare_arrows, size: 20, color: Colors.white),
-  ];
   @override
   void initState() {
     super.initState();
     _controller = PageController(initialPage: 2);
-
     _controller.addListener(() {
       setState(() {
         currentPageValue = _controller.page;
-
-        //_selectedPageIndex = currentPageValue.toInt();
-//        currentPageValue = 0.5;
       });
     });
   }
@@ -110,31 +58,26 @@ class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
               onPageChanged: (index) {
                 _selectPage(index);
               },
-              itemCount: _pages.length,
+              itemCount: IconDatas.pages.length,
               itemBuilder: (context, position) {
                 final page = Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0.1),
-                  child: _pages[position],
+                  child: IconDatas.pages[position],
                 );
 
                 // From page
                 if (position == currentPageValue.floor()) {
-                  return Transform(
-                    transform: Matrix4.identity()
-                      ..setEntry(3, 2, 0.0015) // perspective
-                      ..rotateY(-pi / 16 * (currentPageValue - position)),
-                    child: page,
-                  );
+                  return FromPageTransformation(
+                      position: position,
+                      currentPageValue: currentPageValue,
+                      page: page);
                 }
                 // To page
                 else if (position == currentPageValue.floor() + 1) {
-                  return Transform(
-                    alignment: FractionalOffset.topRight,
-                    transform: Matrix4.identity()
-                      ..setEntry(3, 2, 0.0015) // perspective
-                      ..rotateY(-pi / 16 * (currentPageValue - position)),
-                    child: page,
-                  );
+                  return ToPageTransform(
+                      position: position,
+                      currentPageValue: currentPageValue,
+                      page: page);
                 }
                 // Other page (not in current view)
                 else {
@@ -145,16 +88,8 @@ class _ButtonNaviagtionState extends State<ButtonNaviagtion> {
           ),
         ],
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        height: 60,
-        onTap: (index) {
-          bottomTapped(index);
-        },
-        index: _selectedPageIndex,
-        backgroundColor: Colors.white,
-        color: LightColor.backgroundColor,
-        items: _icon,
-      ),
+      bottomNavigationBar:
+          buildCurvedNavigationBar(bottomTapped, _selectedPageIndex),
     );
   }
 }

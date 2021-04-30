@@ -15,9 +15,10 @@ class DateBirthBar extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: topPadding, bottom: 15),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(kDefaultPadding * 1.2)),
       child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(kDefaultPadding * 0.8),
           child: TextFormField(
             cursorColor: Colors.black,
             keyboardType: TextInputType.text,

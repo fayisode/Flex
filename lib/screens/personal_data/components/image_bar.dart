@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:sizer/sizer.dart';
 import '../../../constrint.dart';
 
 class ImageBar extends StatelessWidget {
@@ -11,7 +11,7 @@ class ImageBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 120,
+        height: 16.0.h,
         width: 120,
         child: Stack(
           children: <Widget>[

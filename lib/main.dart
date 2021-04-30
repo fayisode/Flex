@@ -1,7 +1,11 @@
-import 'package:flex/screens/homepage/homepage.dart';
+import 'package:flex/screens/button-navigation/button-naviagtion.dart';
+import 'package:flex/screens/get-started/get-started.dart';
 import 'package:flex/screens/personal_data/personal_screen.dart';
-import 'package:flex/screens/profile/profile_screen.dart';
-import 'package:flex/screens/stash/stash-screen.dart';
+import 'package:flex/screens/settings/settings_screen.dart';
+import 'package:flex/screens/stash/components/top_up.dart';
+import 'package:flex/screens/topup/components/next_page_screen.dart';
+import 'package:flex/screens/topup/top_up_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -13,6 +17,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -31,8 +36,17 @@ class MyApp extends StatelessWidget {
                   Theme.of(context).textTheme,
                 ),
               ),
-              home: HomePage(),
-              routes: {},
+              //home: '/',
+              initialRoute: '/',
+              routes: {
+                '/': (ctx) => NextPage(),
+                //'/': (ctx) => SettingScreen(),
+                //'/': (ctx) => HomePage(),
+                GetStarted.routeName: (ctx) => GetStarted(),
+                ButtonNaviagtion.routeName: (ctx) => ButtonNaviagtion(),
+                PersonalData.routeName: (ctx) => PersonalData(),
+                SettingScreen.routeName: (ctx) => SettingScreen()
+              },
             );
           },
         );
